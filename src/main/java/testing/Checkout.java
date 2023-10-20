@@ -1,3 +1,5 @@
+package testing;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -55,7 +57,7 @@ public class Checkout {
         // Lanjutkan ke pembayaran
         driver.findElement(By.className("shopping_cart_link")).click();
 
-        // Klik tombol "Checkout".
+        // Klik tombol "testing.Checkout".
         driver.findElement(By.cssSelector(".btn_action.checkout_button")).click();
 
         // Isi informasi pembayaran

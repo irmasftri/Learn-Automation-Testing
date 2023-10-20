@@ -1,3 +1,5 @@
+package testing;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -5,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class LoginTest {
+public class LoginTestFailed {
     private static WebDriver driver;
 
     @Before
@@ -18,11 +20,11 @@ public class LoginTest {
     @Test
     public void login() {
         // Input username and password
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("user-name")).sendKeys("invalid_username");
+        driver.findElement(By.id("password")).sendKeys("invalid_password");
         driver.findElement(By.id("login-button")).click();
 
-        // Validasi berhasil login
+        // Validate successful login (you can add more assertions here)
         assert(driver.getCurrentUrl().equals("https://www.saucedemo.com/inventory.html"));
     }
 
@@ -34,7 +36,8 @@ public class LoginTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        // menutup browser
+
+        // Close the browser
         driver.quit();
     }
 }
